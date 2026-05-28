@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliar | ONG AdoPet</title>
+  <link rel="icon" href="./imagens/gatin.jpg">
+
+  <!-- Bootstrap e ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Navbar */
+    .navbar {
+      background: rgba(33, 150, 243, 0.9);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #ffd369 !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-brand img {
+      border-radius: 50%;
+    }
+
+    /* Área de avaliação */
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .rating i {
+      font-size: 2rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .rating i:hover {
+      transform: scale(1.2);
+    }
+
+    .rating i.active {
+      color: #FFD700;
+    }
+
+    .container h2 {
+      color: #007bff;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    footer {
+      background: #007bff;
+      color: white;
+      padding: 30px 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffd369;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+        <img src="./imagens/cat-hi.gif" alt="Logo" width="40" height="40" class="me-2">
+        <strong>ONG AdoPet</strong>
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="doar.html"><i class="bi bi-gift"></i> Doar</a></li>
+          <li class="nav-item"><a class="nav-link" href="adocao.html"><i class="bi bi-heart"></i> Adotar</a></li>
+          <li class="nav-item"><a class="nav-link" href="contatos.html"><i class="bi bi-telephone"></i> Contato</a></li>
+          <li class="nav-item"><a class="nav-link active" href="avaliar.html"><i class="bi bi-star"></i> Avaliar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaço da navbar -->
+  <div style="margin-top: 90px;"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="container mb-5">
+    <h2>Avalie Nosso Site </h2>
+    <p class="text-center text-muted">Sua opinião é muito importante para nós!</p>
+
+    <!-- Avaliação com estrelas -->
+    <div class="rating" id="rating">
+      <i class="bi bi-star" data-index="1"></i>
+      <i class="bi bi-star" data-index="2"></i>
+      <i class="bi bi-star" data-index="3"></i>
+      <i class="bi bi-star" data-index="4"></i>
+      <i class="bi bi-star" data-index="5"></i>
+    </div>
+
+    <!-- Formulário -->
+    <form class="mx-auto" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Seu Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="comentario" class="form-label">Comentário:</label>
+        <textarea class="form-control" id="comentario" rows="4" placeholder="Escreva sua opinião..." required></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-4">Enviar Avaliação</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Sobre Nós</h5>
+          <p>ONG dedicada à adoção e cuidado de animais abandonados.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Links Úteis</h5>
+          <a href="index.html">Home</a><br>
+          <a href="adocao.html">Adoção</a><br>
+          <a href="contatos.html">Contato</a>
+        </div>
+        <div class="col-md-4">
+          <h5>Contato</h5>
+          <p><i class="bi bi-envelope"></i> contato@adopet.org.br</p>
+          <p><i class="bi bi-telephone"></i> (11) 99999-9999</p>
+        </div>
+      </div>
+      <hr>
+      <p class="text-light mb-0">© 2025 ONG AdoPet — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script das estrelas -->
+  <script>
+    const stars = document.querySelectorAll('.rating i');
+    let rating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        rating = star.getAttribute('data-index');
+        stars.forEach((s, i) => {
+          if (i < rating) {
+            s.classList.remove('bi-star');
+            s.classList.add('bi-star-fill', 'active');
+          } else {
+            s.classList.remove('bi-star-fill', 'active');
+            s.classList.add('bi-star');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
